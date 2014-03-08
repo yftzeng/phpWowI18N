@@ -11,7 +11,7 @@
  * @link     https://github.com/yftzeng/phpWowI18N
  */
 
-namespace GcosMe\I18N;
+namespace Wow\I18N;
 
 /**
  * PHP WowI18N
