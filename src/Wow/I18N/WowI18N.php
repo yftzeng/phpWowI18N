@@ -276,19 +276,30 @@ class WowI18N
      *
      * @return string
      */
-    public function T($dateTimeString)
+    public function T($dateTimeString, $timeZone = null)
     {
         if (\DateTime::createFromFormat('Y-m-d H:i:s', $dateTimeString) === false && DateTime::createFromFormat('Y-m-d', $dateTimeString) === false) {
             error_log('dateTimeString is not valid.');
             return;
         }
-        if ($this->currentTimeZone !== null && $this->systemTimeZone !== $this->currentTimeZone) {
+
+        if ($timeZone != null) {
             $dateTimeString
                 = new \DateTime($dateTimeString, new \DateTimeZone($this->systemTimeZone));
             return $dateTimeString
-                ->setTimezone(new \DateTimeZone($this->currentTimeZone))
+                ->setTimezone(new \DateTimeZone($timeZone))
                 ->format('Y-m-d H:i:s');
         }
+        else {
+            if ($this->currentTimeZone !== null && $this->systemTimeZone !== $this->currentTimeZone) {
+                $dateTimeString
+                    = new \DateTime($dateTimeString, new \DateTimeZone($this->systemTimeZone));
+                return $dateTimeString
+                    ->setTimezone(new \DateTimeZone($this->currentTimeZone))
+                    ->format('Y-m-d H:i:s');
+            }
+        }
+
         return $dateTimeString;
     }
 

@@ -27,6 +27,12 @@ $I->setTimeZone('America/New_York');
 $timezone = '2015-12-25 14:15:11';
 echo 'Current time: '.$timezone."\n";
 echo 'Current timezone: '.$I->T($timezone)."\n";
+$I->setTimeZone('UTC');
+echo 'Current timezone (UTC): '.$I->T($timezone)."\n";
+echo 'Current timezone (UTC): '.$I->T($timezone, 'UTC')."\n";
+$I->setTimeZone('Asia/Taipei');
+echo 'Current timezone (UTC): '.$I->T($timezone)."\n";
+echo 'Current timezone (UTC): '.$I->T($timezone, 'Asia/Taipei')."\n";
 
 // trans
 echo L::DEMO."\n";
