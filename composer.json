@@ -2,7 +2,7 @@
     "name": "yftzeng/wow-i18n",
     "type": "library",
     "description": "Easy management Internationalization and Localization",
-    "keywords": ["wow","lang","montary","i18n","internationalization","localization"],
+    "keywords": ["wow","lang","monetary","i18n","internationalization","localization"],
     "homepage": "http://blog.gcos.me",
     "license": "MIT",
     "authors": [

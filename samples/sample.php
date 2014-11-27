@@ -25,7 +25,7 @@ $I->setCurrencyMaxFractionDigits(7);
 // get number
 echo $I->N(12345.12345)."\n";
 
-// get montary
+// get monetary
 echo $I->M(12345.12345)."\n";
 
 // change timezone
